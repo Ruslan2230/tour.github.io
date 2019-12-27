@@ -1,0 +1,146 @@
+@import "base.css";
+@import "header.css";
+@import "Footer.css";
+
+
+
+
+.gallery {
+    background-color: #fff;
+    padding: 3.75rem 2.313rem 4.678rem;
+}
+
+.title {
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 1.75rem;
+    color: #263555 ;
+    text-transform: uppercase;
+    /*margin-bottom: 2.375rem;*/
+}
+.gallery__title {
+    margin-bottom: 2.375rem;
+}
+.gallery__item {
+    margin-bottom: 2.5rem;
+    position: relative;
+}
+
+.gallery__item::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: rgba(0,0,0,.5);
+    position: absolute;
+    z-index: -1;
+}
+
+.gallery__item:hover::before {
+    z-index: 0;
+}
+
+.gallery__item:hover::after {
+    /*display: block;*/
+    z-index: 0;
+}
+
+.gallery__item:last-child {
+    margin-bottom: 0;
+}
+
+.gallery__item:nth-last-child(-n+3) {
+    display: none;
+}
+
+.gallery__item:nth-last-child(4) {
+    margin-bottom: 0;
+}
+
+.gallery__img {
+    margin: 0 auto;
+}
+
+.gallery__item::after {
+    content: "\f00e";
+    /*display: none;*/
+    display: block;
+    font-family: "FontAwesome", sans-serif;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.75rem;
+    z-index: -1;
+}
+
+.gallery::after {
+    content: "\f062";
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: #38afe5;
+    border-radius: 50%;
+    position: fixed;
+    right: 1.5%;
+    bottom: 2%;
+    font-family: "FontAwesome", sans-serif;
+    color: #fff;
+    text-align: center;
+    line-height: 1.5rem;
+    font-size: 0.75rem;
+}
+
+@media (min-width: 768px) {
+    .gallery__body {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    .gallery__item {
+        flex-basis: 47.8%;
+    }
+    
+    .gallery__item:nth-last-child(-n+3) {
+        margin-bottom: 0;
+        display: block;
+    }
+    
+    .gallery__item:nth-last-child(4) {
+        margin-bottom: 2.5rem;
+    }
+    
+    .gallery__item:last-child {
+     display: none;
+    }
+    
+    .gallery::after {
+        width: 1.75rem;
+        height: 1.75rem;
+        line-height: 1.75rem;
+        right: 0.5%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .gallery__item {
+        flex-basis: 32%;
+    }
+
+    .gallery__item:last-child {
+        display: block;
+    }
+    .gallery {
+        padding: 6.063rem 3.813rem 8.75rem;
+    }
+    .gallery::after {
+        width: 1.875rem;
+        height: 1.875rem;
+        line-height: 1.875rem;
+        right: 1.5%;
+    }
+    .social {
+        width: 20%;
+    }
+}
